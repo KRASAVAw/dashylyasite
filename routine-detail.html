@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Процедура «Сяйво» - PrettyMe</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --c-bg-light: #FFF0F3;
+            --c-bg-dark: #FFDEE6;
+            --c-plum-dark: #3D0D1F; 
+            --c-plum-light: #5C2A3B; 
+            --c-raspberry: #D62F58; 
+            --c-raspberry-hover: #B01E40;
+            --c-white: #FFFFFF;
+            --nav-height: 80px;
+            --container-width: 1280px;
+        }
+
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: var(--c-bg-light);
+            color: var(--c-plum-dark);
+            overflow-x: hidden;
+        }
+
+        /* Nav & Footer (Copied Styles) */
+        header { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); z-index: 100; background: rgba(255, 240, 243, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(214, 47, 88, 0.08); }
+        .nav-wrapper { height: 100%; display: flex; justify-content: space-between; align-items: center; max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
+        .nav-link { text-decoration: none; color: var(--c-plum-light); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--c-raspberry); }
+        .btn-shop { background-color: var(--c-raspberry); color: var(--c-white); padding: 0.75rem 1.75rem; border-radius: 100px; font-weight: 500; }
+        .logo { font-family: 'Unbounded', serif; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: var(--c-plum-dark); }
+
+        /* Detail Page Specific */
+        .detail-hero {
+            padding-top: calc(var(--nav-height) + 4rem);
+            padding-bottom: 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, #FFF0F3 0%, #FFFFFF 100%);
+        }
+
+        .tag-pill {
+            background: rgba(214, 47, 88, 0.1); color: var(--c-raspberry);
+            padding: 0.5rem 1rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; font-weight: 700;
+            margin-bottom: 1.5rem; display: inline-block;
+        }
+
+        .routine-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem;
+            max-width: var(--container-width); margin: 0 auto; padding: 2rem 2rem; margin-bottom: 6rem; margin-top: 4rem;
+        }
+
+        .routine-visual {
+            position: sticky; top: 120px;
+            border-radius: 24px; overflow: hidden;
+            box-shadow: 0 20px 60px rgba(61, 13, 31, 0.1);
+        }
+
+        .step-timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(61, 13, 31, 0.1);
+        }
+
+        .step-item { position: relative; margin-bottom: 4rem; }
+        
+        .step-marker {
+            position: absolute; left: -2.6rem; top: 0;
+            width: 20px; height: 20px;
+            background: var(--c-raspberry); border: 4px solid white;
+            border-radius: 50%; box-shadow: 0 0 0 1px rgba(61, 13, 31, 0.1);
+        }
+
+        .step-num { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--c-raspberry); margin-bottom: 0.5rem; display: block; font-weight: 700; }
+        .step-title { font-size: 1.5rem; margin-bottom: 1rem; color: var(--c-plum-dark); font-weight: 700; }
+        .step-desc { font-family: 'Montserrat', sans-serif; font-size: 1rem; line-height: 1.6; color: var(--c-plum-light); margin-bottom: 1.5rem; }
+
+        .product-mini-card {
+            display: flex; align-items: center; gap: 1rem;
+            background: #FFF5F7; padding: 1rem; border-radius: 12px;
+            border: 1px solid rgba(214, 47, 88, 0.1);
+            transition: transform 0.3s;
+        }
+        .product-mini-card:hover { transform: translateX(5px); background: white; border-color: var(--c-raspberry); }
+        .product-img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; background: white; }
+
+        @media (max-width: 968px) {
+            .routine-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .routine-visual { position: relative; top: 0; order: -1; aspect-ratio: 1/1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <div style="display:flex; gap:0.75rem; align-items:center;">
+                <div style="width:40px; height:40px;"><svg fill="#D62F58" viewBox="0 0 48 48"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path></svg></div>
+                <a href="index.html" class="logo">PrettyMe</a>
+            </div>
+            <nav style="display:flex; align-items:center; gap:2.5rem;" class="hidden md:flex">
+                <div style="display:flex; gap:2rem;">
+                    <a href="routines.html" class="nav-link" style="color:var(--c-raspberry)">Назад до Процедур</a>
+                </div>
+                <a href="shop-all.html" class="btn-shop">Купити все</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="detail-hero">
+            <div style="max-width:800px; margin:0 auto; padding:0 1rem;">
+                <span class="tag-pill">Для сухої та тьмяної шкіри</span>
+                <h1 style="font-size:clamp(2.5rem, 5vw, 4rem); font-weight:700; line-height:1.1; margin-bottom:1rem; color:var(--c-plum-dark);">Процедура «Сяйво»</h1>
+                <p style="font-family:'Montserrat'; font-size:1.1rem; color:var(--c-plum-light);">
+                    Інтенсивний курс зволоження, який повертає шкірі природне світіння та пружність за 5 простих кроків. Ідеально для ранкового ритуалу.
+                </p>
+            </div>
+        </section>
+
+        <section class="routine-grid">
+            <!-- Visual -->
+            <div class="routine-visual">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF1CgTkBvpeX29dkqOHXjIcW0Oaz-M8vK20U5IJ_QzXTYRMS2tHcdjs81oilgYMF0ZmU8x6tyAqQF8LEizG1H7kQG1DG8IZoDo4F-D0TsSma6xz5qzyUgDvTl3pZyb3eXYNN9oj8LYdjufjv20s0DKlG4dwRsjmVR8J72qSWMAz7ojIN2kcFw9noDzEWbS15D6-pFKrzsI0ZFBuYIavhLCn_TOkihMWd85AUr61takA6A0oIgV7KwyHUvY_14zodPyy9_gZrYk4nk" alt="Glowing Skin Routine" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+
+            <!-- Steps -->
+            <div class="step-timeline">
+                
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <span class="step-num">Крок 01</span>
+                    <h3 class="step-title">Ніжне Очищення</h3>
+                    <p class="step-desc">Почніть з нашої пінки, щоб змити нічний догляд та себум, не порушуючи бар'єр.</p>
+                    <a href="shop-all.html" class="product-mini-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrfM5Awcw6uc5FojahSXnPDijVbuV_CbwUhwQQ4jp32xeafqHgq3s45xf4i5gydL-SqOhEUMDWug4N0hI0_Kr_awtxPz6DHkCGuus1VTeuZ9UXedimyyu3GSlfk_bmigSGzW5UrOYEq-CJeyfBXjBuvTEJQLZ47l7A4rEtyrVB-glXtfzQDXXbl4Qcoj0yfMWqM52tyLSCskRMd58YjKQm-7e8rDSc1NadUaw_j5KXoSORBrV1MH2smspqfggwb662xrX2Db13kEY" class="product-img">
+                        <div>
+                            <div style="font-weight:700; font-size:0.9rem;">Soft Cloud Foam</div>
+                            <div style="font-size:0.8rem; color:var(--c-raspberry);">999 ₴</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <span class="step-num">Крок 02</span>
+                    <h3 class="step-title">Тонізація</h3>
+                    <p class="step-desc">Нанесіть тонер з AHA-кислотами для легкого відлущування та підготовки шкіри до сироватки.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <span class="step-num">Крок 03</span>
+                    <h3 class="step-title">Активація Сяйва</h3>
+                    <p class="step-desc">Головний герой процедури. Вітамін C вирівнює тон та надає того самого "glow" ефекту.</p>
+                    <a href="shop-all.html" class="product-mini-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojOLif1PPTJhsLVFvpMmMMcYaiBJ4hmoViNec1zRRxp8WDXIpu4eZzWukhptA0b7TfFJasJVi4B2YTyMTapfj0VvV3wOpxGK3yokVnh06eF-zMpt_Pt-w8FzgA1codDm-RHr6QU2llXx6IX36ZQllhxcSXOWEBq7qfK_7zkrrNZydQYaemPGhRZiyxrsbFM4eTuK1VrXvwnV0UOkyHS8_7TlEqK6qvLw7gCeZ-cs1vGfsKmqQQBS5u3lLeYVZpR8Y9RqMjnDv6LQ" class="product-img">
+                        <div>
+                            <div style="font-weight:700; font-size:0.9rem;">Radiant Glow Serum</div>
+                            <div style="font-size:0.8rem; color:var(--c-raspberry);">1 900 ₴</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <span class="step-num">Крок 04</span>
+                    <h3 class="step-title">Зволоження та Захист</h3>
+                    <p class="step-desc">Закріпіть результат зволожуючим кремом. Він створить захисний шар і збереже вологу протягом дня.</p>
+                    <a href="shop-all.html" class="product-mini-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuASsDRab4BcYD1WNVNG0Y6IXtcPB_O9ZNRt-oRiSfFi68MIHIMDFkR1Ejhy60lJb4_FAeMy43zsHKxmmfhycj8s7kalTIyWsE24M4NnJBzWs22glgU0ckvKiZL8wZOSq__yZ2E-r-Umjgg5QKXe5ZFwS1hrEjIhIipnFcUKLkm1b6mguoDqAIVU5oCUSjti_SFbQVqPYkPLjGfS_uyaTQJn-2pJBUk3xxDqVaqOYDapbzinOqEWqtAYIYVBE0om5i_ERgJK5ZTvSEo" class="product-img">
+                        <div>
+                            <div style="font-weight:700; font-size:0.9rem;">Hydra-Lock Cream</div>
+                            <div style="font-size:0.8rem; color:var(--c-raspberry);">1 599 ₴</div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Simplified Footer -->
+    <footer style="background:var(--c-plum-dark); color:#FFDEE6; padding:3rem 0; text-align:center;">
+        <div style="margin-bottom:1rem; font-family:'Unbounded'; font-weight:700; font-size:1.5rem; color:white;">PrettyMe.</div>
+        <div style="font-size:0.9rem; opacity:0.7;">© 2025 Всі права захищені.</div>
+    </footer>
+
+</body>
+</html>

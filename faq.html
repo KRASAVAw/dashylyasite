@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ та Доставка - PrettyMe</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette */
+            --c-bg-light: #FFF0F3;
+            --c-bg-dark: #FFDEE6;
+            --c-plum-dark: #3D0D1F; 
+            --c-plum-light: #5C2A3B; 
+            --c-raspberry: #D62F58; 
+            --c-raspberry-hover: #B01E40;
+            --c-blush: #FFC2CF;
+            --c-white: #FFFFFF;
+            
+            --nav-height: 80px;
+            --container-width: 1280px;
+            --border-radius-pill: 100px;
+            
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: var(--c-bg-light);
+            color: var(--c-plum-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .text-primary { color: #ee2b5b; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-pill);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Unbounded', sans-serif;
+            text-align: center;
+            border: none;
+        }
+
+        .btn-shop {
+            background-color: var(--c-raspberry); color: var(--c-white); padding: 0.75rem 1.75rem;
+            box-shadow: 0 4px 15px rgba(214, 47, 88, 0.2); white-space: nowrap;
+        }
+        .btn-shop:hover {
+            transform: scale(1.05); background-color: var(--c-raspberry-hover);
+            box-shadow: 0 6px 20px rgba(214, 47, 88, 0.3);
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: var(--nav-height);
+            z-index: 100;
+            background: rgba(255, 240, 243, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(214, 47, 88, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-wrapper { height: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-left { display: flex; gap: 0.75rem; align-items: center; z-index: 102; position: relative; }
+        .logo-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .logo-icon svg { width: 100%; height: 100%; object-fit: contain; }
+        .logo {
+            font-family: 'Unbounded', serif; font-size: 1.5rem; font-weight: 700;
+            font-variation-settings: "SOFT" 100, "WONK" 1; text-transform: uppercase;
+            color: var(--c-plum-dark); text-decoration: none; letter-spacing: -0.02em;
+        }
+        @media (min-width: 768px) { .logo { font-size: 1.75rem; } }
+        .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { text-decoration: none; color: var(--c-plum-light); font-weight: 500; font-size: 0.95rem; position: relative; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--c-raspberry); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
+            background-color: var(--c-raspberry); transform: scaleX(0); transform-origin: center;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        /* Mobile Menu */
+        .mobile-menu-btn { display: none; width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 102; }
+        .mobile-menu-btn span {
+            display: block; position: absolute; height: 2px; width: 100%;
+            background: var(--c-plum-dark); border-radius: 2px; transition: all 0.3s ease;
+        }
+        .mobile-menu-btn span:nth-child(1) { top: 0; }
+        .mobile-menu-btn span:nth-child(2) { top: 9px; }
+        .mobile-menu-btn span:nth-child(3) { top: 18px; }
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(255, 240, 243, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            z-index: 101; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 2rem;
+        }
+        .mobile-menu-overlay.active { opacity: 1; pointer-events: all; }
+        .mobile-nav-links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; }
+        .mobile-nav-link { font-size: 1.5rem; font-weight: 700; color: var(--c-plum-dark); text-decoration: none; text-transform: uppercase; }
+        .mobile-menu-close {
+            position: absolute; top: 24px; right: 2rem; background: none; border: none; cursor: pointer;
+            color: var(--c-plum-dark); padding: 0.5rem; transition: transform 0.3s ease, color 0.3s ease; z-index: 105;
+        }
+        .mobile-menu-close:hover { color: var(--c-raspberry); transform: rotate(90deg); }
+
+        @media (max-width: 968px) {
+            .nav-links, .btn-shop { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        /* --- PAGE CONTENT --- */
+        .page-header {
+            padding-top: calc(var(--nav-height) + 4rem);
+            padding-bottom: 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--c-bg-light) 0%, #FFF5F7 100%);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--c-plum-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Layout Grid */
+        .help-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            padding-bottom: 8rem;
+            align-items: start;
+        }
+
+        /* Sidebar Navigation */
+        .help-sidebar {
+            position: sticky;
+            top: 120px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(61, 13, 31, 0.05);
+            box-shadow: 0 10px 30px rgba(61, 13, 31, 0.02);
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--c-plum-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-link:hover {
+            background: rgba(214, 47, 88, 0.05);
+            color: var(--c-raspberry);
+            padding-left: 2rem;
+        }
+
+        .sidebar-link.active {
+            background: var(--c-raspberry);
+            color: white;
+            padding-left: 1.5rem;
+            box-shadow: 0 5px 15px rgba(214, 47, 88, 0.2);
+        }
+
+        /* Content Area */
+        .content-section {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            scroll-margin-top: 120px; /* Offset for sticky header */
+            border: 1px solid rgba(61, 13, 31, 0.05);
+        }
+
+        .section-header {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(61, 13, 31, 0.1);
+            color: var(--c-plum-dark);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            color: var(--c-raspberry);
+            font-size: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: var(--c-bg-light);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+        
+        .info-card h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--c-plum-dark);
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--c-plum-light);
+        }
+
+        /* Accordion */
+        .accordion-item {
+            border-bottom: 1px solid rgba(61, 13, 31, 0.1);
+        }
+        
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem 0;
+            text-align: left;
+            background: none;
+            border: none;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--c-plum-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .accordion-header:hover { color: var(--c-raspberry); }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--c-plum-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .accordion-content p { padding-bottom: 1.5rem; }
+
+        .accordion-item.active .accordion-icon { transform: rotate(45deg); }
+        .accordion-item.active .accordion-content { max-height: 500px; /* Approximate max height */ }
+
+        /* Floating Contact */
+        .contact-cta {
+            background: var(--c-plum-dark);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-text h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .contact-text p { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; opacity: 0.8; }
+
+        @media (max-width: 968px) {
+            .help-layout { grid-template-columns: 1fr; gap: 2rem; }
+            .help-sidebar { display: none; /* Hide sidebar on mobile, assume sticky header links or linear scroll */ }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-cta { flex-direction: column; text-align: center; gap: 1.5rem; }
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            background-color: var(--c-plum-dark); color: #FFDEE6; padding: 5rem 0 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .footer-texture {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 80% 20%, #5C2A3B 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; position: relative; z-index: 1;
+        }
+        .footer-brand h3 { font-family: 'Unbounded', serif; font-size: 1.8rem; color: var(--c-white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; max-width: 300px; }
+        .footer-heading { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--c-raspberry); margin-bottom: 1.5rem; display: block; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-link { color: #FFDEE6; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; width: fit-content; }
+        .footer-link:hover { color: var(--c-white); transform: translateX(5px); text-shadow: 0 0 10px rgba(255, 194, 207, 0.3); }
+        .social-row { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex; align-items: center; justify-content: center; color: var(--c-white); transition: all 0.3s;
+        }
+        .social-icon:hover { background: var(--c-raspberry); border-color: var(--c-raspberry); transform: scale(1.1) rotate(5deg); }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.6; position: relative; z-index: 1; }
+        
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <ul class="mobile-nav-links">
+            <li><a href="ourstory.html" class="mobile-nav-link">Наша Історія</a></li>
+            <li><a href="routines.html" class="mobile-nav-link">Процедури</a></li>
+            <li><a href="journal.html" class="mobile-nav-link">Журнал</a></li>
+            <li><a href="shop-all.html" class="mobile-nav-link">Магазин</a></li>
+            <li><a href="faq.html" class="mobile-nav-link" style="color:var(--c-raspberry);">Допомога</a></li>
+        </ul>
+        <a href="shop-all.html" class="btn btn-shop" style="display: inline-flex;">Купити Зараз</a>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="nav-left">
+                <div class="logo-icon text-primary">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                    </svg>
+                </div>
+                <a href="index.html" class="logo">PrettyMe</a>
+            </div>
+            
+            <nav class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="ourstory.html" class="nav-link">Наша Історія</a></li>
+                    <li><a href="routines.html" class="nav-link">Процедури</a></li>
+                    <li><a href="journal.html" class="nav-link">Журнал</a></li>
+                </ul>
+                <a href="shop-all.html" class="btn btn-shop">Купити Зараз</a>
+                
+                <div class="mobile-menu-btn" id="menuBtn">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Центр Допомоги</h1>
+            <p class="page-subtitle">Вся інформація про доставку, оплату та повернення в одному місці. Ми тут, щоб зробити ваш досвід максимально комфортним.</p>
+        </div>
+    </section>
+
+    <div class="container help-layout">
+        
+        <!-- SIDEBAR -->
+        <aside class="help-sidebar">
+            <nav>
+                <a href="#delivery" class="sidebar-link active" onclick="activateLink(this)">
+                    <span>🚚</span> Доставка
+                </a>
+                <a href="#payment" class="sidebar-link" onclick="activateLink(this)">
+                    <span>💳</span> Оплата
+                </a>
+                <a href="#returns" class="sidebar-link" onclick="activateLink(this)">
+                    <span>↩️</span> Повернення
+                </a>
+                <a href="#faq" class="sidebar-link" onclick="activateLink(this)">
+                    <span>❓</span> FAQ
+                </a>
+            </nav>
+        </aside>
+
+        <!-- CONTENT -->
+        <main>
+            
+            <!-- Delivery Section -->
+            <section id="delivery" class="content-section">
+                <div class="section-header">
+                    <span class="section-icon">🚚</span>
+                    <h2>Доставка</h2>
+                </div>
+                
+                <p style="margin-bottom: 2rem; line-height: 1.6; color: var(--c-plum-light); font-family: 'Montserrat';">
+                    Ми відправляємо замовлення щодня (пн-сб). Замовлення, оформлені до 15:00, відправляються в той же день.
+                </p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>Нова Пошта (Відділення)</h4>
+                        <p>1-3 дні. Вартість від 70 грн. Безкоштовно для замовлень від 2000 грн.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Нова Пошта (Кур'єр)</h4>
+                        <p>Доставка до дверей. Вартість від 100 грн. Зручно та безпечно.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Поштомат</h4>
+                        <p>Забирайте в будь-який час. Найвигідніший тариф (від 50 грн).</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Міжнародна Доставка</h4>
+                        <p>Здійснюється через Укрпошту або DHL. Терміни: 14-21 день.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Section -->
+            <section id="payment" class="content-section">
+                <div class="section-header">
+                    <span class="section-icon">💳</span>
+                    <h2>Оплата</h2>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Оплата карткою на сайті (Visa/Mastercard)
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Миттєва оплата без комісії. Ми використовуємо захищений платіжний шлюз LiqPay/WayForPay. Ваші дані повністю зашифровані.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Apple Pay / Google Pay
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Найшвидший спосіб. Оплачуйте в один клік прямо зі смартфона.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Накладений платіж
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Оплата при отриманні на пошті. Зверніть увагу: перевізник стягує додаткову комісію за переказ коштів (20 грн + 2% від суми).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Returns Section -->
+            <section id="returns" class="content-section">
+                <div class="section-header">
+                    <span class="section-icon">↩️</span>
+                    <h2>Повернення та Обмін</h2>
+                </div>
+                
+                <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--c-plum-light); font-family: 'Montserrat';">
+                    Відповідно до Закону України, парфумерно-косметичні вироби належної якості <strong>не підлягають поверненню</strong>. Однак, ми дбаємо про ваш досвід.
+                </p>
+
+                <div class="info-card" style="background: #FFF5F7; border: 1px solid rgba(214, 47, 88, 0.1);">
+                    <h4>Винятки (Коли ми повернемо кошти):</h4>
+                    <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem; font-family: 'Montserrat'; font-size: 0.95rem; line-height: 1.6;">
+                        <li>Товар пошкоджено під час доставки (потрібен акт з пошти).</li>
+                        <li>Отримано не той товар, що був замовлений.</li>
+                        <li>Термін придатності товару сплив.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="content-section">
+                <div class="section-header">
+                    <span class="section-icon">❓</span>
+                    <h2>Часті Запитання</h2>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Чи тестується косметика на тваринах?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Ні! PrettyMe — це 100% Cruelty-Free бренд. Ми любимо тварин і ніколи не тестуємо на них наші формули.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Як дізнатися термін придатності?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Термін придатності вказано на дні кожного флакона. Після відкриття ми рекомендуємо використати продукт протягом 6-12 місяців (шукайте значок відкритої баночки на упаковці).</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Чи підходять засоби для чутливої шкіри?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Так, наші формули розроблені з урахуванням чутливої шкіри. Ми не використовуємо агресивні спирти, штучні барвники та сильні віддушки. Однак, ми завжди рекомендуємо робити патч-тест перед використанням.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Як отримати консультацію?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Напишіть нам в Instagram @DARIATOP або скористайтеся формою нижче. Наші експерти допоможуть підібрати ідеальний догляд.</p>
+                    </div>
+                </div>
+
+                <!-- Contact CTA Box -->
+                <div class="contact-cta">
+                    <div class="contact-text">
+                        <h4>Не знайшли відповіді?</h4>
+                        <p>Наша служба пiдтримки працює з 10:00 до 19:00.</p>
+                    </div>
+                    <a href="mailto:support@prettyme.com" class="btn" style="background: white; color: var(--c-plum-dark); padding: 0.8rem 1.5rem; font-size: 0.9rem;">
+                        Написати нам
+                    </a>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-texture"></div>
+        <div class="container">
+            
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>PrettyMe.</h3>
+                    <p>ДАШУЛЯ ТОП.</p>
+                </div>
+
+                <div>
+                    <span class="footer-heading">Меню</span>
+                    <ul class="footer-links">
+                        <li><a href="shop-all.html" class="footer-link">Всі Товари</a></li>
+                        <li><a href="ourstory.html" class="footer-link">Наша Історія</a></li>
+                        <li><a href="journal.html" class="footer-link">Журнал</a></li>
+                        <li><a href="glossary.html" class="footer-link">Глосарій Інгредієнтів</a></li>
+                        <li><a href="gift-card.html" class="footer-link">Подарункові Карти</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <span class="footer-heading">Підтримка</span>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link" style="color:var(--c-white);">FAQ та Доставка</a></li>
+                        <li><a href="refund.html" class="footer-link">Повернення</a></li>
+                        <li><a href="contacts.html" class="footer-link">Контакти</a></li>
+                    </ul>
+                    
+                    <div class="social-row">
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" class="social-icon" aria-label="Pinterest">
+                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2025 PrettyMe Co. Всі права захищено.</span>
+                <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
+                    Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Accordion Logic
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+            
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Sidebar Active State Logic
+        function activateLink(link) {
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        }
+
+        // Simple Intersection Observer for scrolling
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px', // Trigger when section is near top
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const link = document.querySelector(`.sidebar-link[href="#${id}"]`);
+                    if(link) activateLink(link);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

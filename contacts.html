@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - PrettyMe</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette */
+            --c-bg-light: #FFF0F3;
+            --c-bg-dark: #FFDEE6;
+            --c-plum-dark: #3D0D1F; 
+            --c-plum-light: #5C2A3B; 
+            --c-raspberry: #D62F58; 
+            --c-raspberry-hover: #B01E40;
+            --c-blush: #FFC2CF;
+            --c-white: #FFFFFF;
+            
+            --nav-height: 80px;
+            --container-width: 1280px;
+            --border-radius-pill: 100px;
+            
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: var(--c-bg-light);
+            color: var(--c-plum-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .text-primary { color: #ee2b5b; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-pill);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: all 0.4s var(--ease-out-expo);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Unbounded', sans-serif;
+            text-align: center;
+            border: none;
+        }
+
+        .btn-shop {
+            background-color: var(--c-raspberry); color: var(--c-white); padding: 0.75rem 1.75rem;
+            box-shadow: 0 4px 15px rgba(214, 47, 88, 0.2); white-space: nowrap;
+        }
+        .btn-shop:hover {
+            transform: scale(1.05); background-color: var(--c-raspberry-hover);
+            box-shadow: 0 6px 20px rgba(214, 47, 88, 0.3);
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: var(--nav-height);
+            z-index: 100;
+            background: rgba(255, 240, 243, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(214, 47, 88, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-wrapper { height: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .nav-left { display: flex; gap: 0.75rem; align-items: center; z-index: 102; position: relative; }
+        .logo-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .logo-icon svg { width: 100%; height: 100%; object-fit: contain; }
+        .logo {
+            font-family: 'Unbounded', serif; font-size: 1.5rem; font-weight: 700;
+            font-variation-settings: "SOFT" 100, "WONK" 1; text-transform: uppercase;
+            color: var(--c-plum-dark); text-decoration: none; letter-spacing: -0.02em;
+        }
+        @media (min-width: 768px) { .logo { font-size: 1.75rem; } }
+        .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { text-decoration: none; color: var(--c-plum-light); font-weight: 500; font-size: 0.95rem; position: relative; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--c-raspberry); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px;
+            background-color: var(--c-raspberry); transform: scaleX(0); transform-origin: center;
+            transition: transform 0.4s var(--ease-out-expo);
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+
+        /* Mobile Menu */
+        .mobile-menu-btn { display: none; width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 102; }
+        .mobile-menu-btn span {
+            display: block; position: absolute; height: 2px; width: 100%;
+            background: var(--c-plum-dark); border-radius: 2px; transition: all 0.3s ease;
+        }
+        .mobile-menu-btn span:nth-child(1) { top: 0; }
+        .mobile-menu-btn span:nth-child(2) { top: 9px; }
+        .mobile-menu-btn span:nth-child(3) { top: 18px; }
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+        .mobile-menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(255, 240, 243, 0.98); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            z-index: 101; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 2rem;
+        }
+        .mobile-menu-overlay.active { opacity: 1; pointer-events: all; }
+        .mobile-nav-links { list-style: none; text-align: center; display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem; }
+        .mobile-nav-link { font-size: 1.5rem; font-weight: 700; color: var(--c-plum-dark); text-decoration: none; text-transform: uppercase; }
+        .mobile-menu-close {
+            position: absolute; top: 24px; right: 2rem; background: none; border: none; cursor: pointer;
+            color: var(--c-plum-dark); padding: 0.5rem; transition: transform 0.3s ease, color 0.3s ease; z-index: 105;
+        }
+        .mobile-menu-close:hover { color: var(--c-raspberry); transform: rotate(90deg); }
+
+        @media (max-width: 968px) {
+            .nav-links, .btn-shop { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        /* --- CONTACT PAGE STYLES --- */
+        .contact-hero {
+            position: relative;
+            padding-top: calc(var(--nav-height) + 2rem);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle at 10% 10%, #FFF0F3 0%, #FFDEE6 100%);
+        }
+
+        .contact-bg-shape {
+            position: absolute;
+            top: -20%; right: -10%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--c-blush), transparent 70%);
+            opacity: 0.4;
+            filter: blur(80px);
+            animation: breathe 10s infinite alternate;
+        }
+
+        @keyframes breathe {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* LEFT COLUMN: INFO */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-eyebrow {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--c-raspberry);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+            color: var(--c-plum-dark);
+        }
+
+        .contact-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--c-plum-light);
+            margin-bottom: 3rem;
+            max-width: 500px;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .method-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.4);
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .method-item:hover {
+            background: white;
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(61, 13, 31, 0.05);
+        }
+
+        .method-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: var(--c-bg-dark);
+            color: var(--c-raspberry);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .method-text h4 {
+            font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--c-plum-dark);
+        }
+        .method-text p, .method-text a {
+            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: var(--c-plum-light); text-decoration: none;
+        }
+        .method-text a:hover { color: var(--c-raspberry); text-decoration: underline; }
+
+        /* RIGHT COLUMN: FORM */
+        .contact-form-wrapper {
+            background: white;
+            padding: 3rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(61, 13, 31, 0.08);
+            position: relative;
+        }
+
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 34px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--c-blush), transparent, var(--c-raspberry));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .form-group { margin-bottom: 1.5rem; position: relative; }
+        
+        .form-label {
+            font-size: 0.85rem; font-weight: 600; color: var(--c-plum-dark); margin-bottom: 0.5rem; display: block;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: var(--c-bg-light);
+            border: 1px solid transparent;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--c-plum-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            background: white;
+            border-color: var(--c-raspberry);
+            box-shadow: 0 0 0 4px rgba(214, 47, 88, 0.1);
+        }
+
+        .form-textarea { resize: vertical; min-height: 120px; }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--c-plum-dark);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Unbounded', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit:hover {
+            background: var(--c-raspberry);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(214, 47, 88, 0.2);
+        }
+
+        @media (max-width: 968px) {
+            .contact-container { grid-template-columns: 1fr; gap: 3rem; padding-top: 4rem; }
+            .contact-title { font-size: 3rem; }
+            .contact-form-wrapper { padding: 2rem; }
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            background-color: var(--c-plum-dark); color: #FFDEE6; padding: 5rem 0 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .footer-texture {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 80% 20%, #5C2A3B 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; position: relative; z-index: 1;
+        }
+        .footer-brand h3 { font-family: 'Unbounded', serif; font-size: 1.8rem; color: var(--c-white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; max-width: 300px; }
+        .footer-heading { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--c-raspberry); margin-bottom: 1.5rem; display: block; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-link { color: #FFDEE6; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; width: fit-content; }
+        .footer-link:hover { color: var(--c-white); transform: translateX(5px); text-shadow: 0 0 10px rgba(255, 194, 207, 0.3); }
+        .social-row { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex; align-items: center; justify-content: center; color: var(--c-white); transition: all 0.3s;
+        }
+        .social-icon:hover { background: var(--c-raspberry); border-color: var(--c-raspberry); transform: scale(1.1) rotate(5deg); }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.6; position: relative; z-index: 1; }
+        
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+
+        <ul class="mobile-nav-links">
+            <li><a href="ourstory.html" class="mobile-nav-link">Наша Історія</a></li>
+            <li><a href="routines.html" class="mobile-nav-link">Процедури</a></li>
+            <li><a href="journal.html" class="mobile-nav-link">Журнал</a></li>
+            <li><a href="shop-all.html" class="mobile-nav-link">Магазин</a></li>
+            <li><a href="contact.html" class="mobile-nav-link" style="color:var(--c-raspberry);">Контакти</a></li>
+        </ul>
+        <a href="shop-all.html" class="btn btn-shop" style="display: inline-flex;">Купити Зараз</a>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="nav-left">
+                <div class="logo-icon text-primary">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                    </svg>
+                </div>
+                <a href="index.html" class="logo">PrettyMe</a>
+            </div>
+            
+            <nav class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="ourstory.html" class="nav-link">Наша Історія</a></li>
+                    <li><a href="routines.html" class="nav-link">Процедури</a></li>
+                    <li><a href="journal.html" class="nav-link">Журнал</a></li>
+                </ul>
+                <a href="shop-all.html" class="btn btn-shop">Купити Зараз</a>
+                
+                <div class="mobile-menu-btn" id="menuBtn">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-hero">
+        <div class="contact-bg-shape"></div>
+        <div class="container contact-container">
+            
+            <!-- Left: Info -->
+            <div class="contact-info">
+                <span class="section-eyebrow">Ми на зв'язку</span>
+                <h1 class="contact-title">Давайте <br>Спілкуватися.</h1>
+                <p class="contact-desc">
+                    Маєте питання щодо складу? Потрібна допомога з підбором процедури? Або просто хочете поділитися своїми враженнями? Наша команда експертів тут для вас.
+                </p>
+
+                <div class="contact-methods">
+                    <div class="method-item">
+                        <div class="method-icon">✉️</div>
+                        <div class="method-text">
+                            <h4>Email</h4>
+                            <p>Для загальних питань та підтримки:</p>
+                            <a href="mailto:support@prettyme.com">support@prettyme.com</a>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon">💬</div>
+                        <div class="method-text">
+                            <h4>Соціальні Мережі</h4>
+                            <p>Найшвидші відповіді в Direct:</p>
+                            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s">@DARIATOP</a>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon">📍</div>
+                        <div class="method-text">
+                            <h4>Шоурум</h4>
+                            <p>Київ, Берестейський проспект, 20</p>
+                            <p style="font-size:0.8rem; opacity:0.8;">Пн-Нд: 10:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="contact-form-wrapper">
+                <form id="contactForm" onsubmit="event.preventDefault(); alert('Дякуємо! Ваше повідомлення надіслано.');">
+                    <div class="form-group">
+                        <label class="form-label">Ваше Ім'я</label>
+                        <input type="text" class="form-input" placeholder="Олена" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="elena@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Тема</label>
+                        <select class="form-input">
+                            <option>Питання про продукт</option>
+                            <option>Статус замовлення</option>
+                            <option>Співпраця / PR</option>
+                            <option>Інше</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Повідомлення</label>
+                        <textarea class="form-textarea" placeholder="Як ми можемо допомогти вам сьогодні?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Надіслати Повідомлення</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-texture"></div>
+        <div class="container">
+            
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>PrettyMe.</h3>
+                    <p>ДАШУЛЯ ТОП.</p>
+                </div>
+
+                <div>
+                    <span class="footer-heading">Меню</span>
+                    <ul class="footer-links">
+                        <li><a href="shop-all.html" class="footer-link">Всі Товари</a></li>
+                        <li><a href="ourstory.html" class="footer-link">Наша Історія</a></li>
+                        <li><a href="journal.html" class="footer-link">Журнал</a></li>
+                        <li><a href="glossary.html" class="footer-link">Глосарій Інгредієнтів</a></li>
+                        <li><a href="gift-card.html" class="footer-link">Подарункові Карти</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <span class="footer-heading">Підтримка</span>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ та Доставка</a></li>
+                        <li><a href="refund.html" class="footer-link">Повернення</a></li>
+                        <li><a href="contacts.html" class="footer-link" style="color:var(--c-white);">Контакти</a></li>
+                    </ul>
+                    
+                    <div class="social-row">
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" class="social-icon" aria-label="Pinterest">
+                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2025 PrettyMe Co. Всі права захищено.</span>
+                <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
+                    Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

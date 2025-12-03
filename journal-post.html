@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сила гіалуронової кислоти - PrettyMe</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette */
+            --c-bg-light: #FFF0F3;
+            --c-bg-dark: #FFDEE6;
+            --c-plum-dark: #3D0D1F; 
+            --c-plum-light: #5C2A3B; 
+            --c-raspberry: #D62F58; 
+            --c-raspberry-hover: #B01E40;
+            --c-blush: #FFC2CF;
+            --c-white: #FFFFFF;
+            
+            --nav-height: 80px;
+            --container-width: 1280px;
+            
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: var(--c-bg-light);
+            color: var(--c-plum-dark);
+            overflow-x: hidden;
+			margin: 0;
+        }
+
+        /* --- Header (Copied) --- */
+        header { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); z-index: 100; background: rgba(255, 240, 243, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(214, 47, 88, 0.08); transition: transform 0.3s ease; }
+        .nav-wrapper { height: 100%; display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        .nav-link { text-decoration: none; color: var(--c-plum-light); font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--c-raspberry); }
+        .btn-shop { background-color: var(--c-raspberry); color: var(--c-white); padding: 0.75rem 1.75rem; border-radius: 100px; font-weight: 500; text-decoration: none; transition: all 0.3s; }
+        .btn-shop:hover { transform: scale(1.05); }
+        .logo { font-family: 'Unbounded', serif; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; color: var(--c-plum-dark); text-decoration: none; }
+
+        /* --- Article Layout --- */
+        .article-wrapper {
+            margin-top: calc(var(--nav-height) + 2rem);
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .article-wrapper {
+                grid-template-columns: 1fr 300px; /* Main content + Sidebar */
+            }
+        }
+
+        /* Hero */
+        .article-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            border-radius: 32px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: flex-end;
+            padding: 4rem;
+            color: white;
+        }
+
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwzBn-mDvD8QN8KehwqWROa0n-NBn7_pURTSa3_lp4m3pTUR57FA8UVx77Z2I5A5x5w_ITHsbwPX8uwZ3huSpRSqxcHlP-povC-EbXWYLkDPXPncNphbJDK1vHpoa-gCqqIh0-Bfp4B6nk5pDDJXmmiGH-mcdFDUZFt2P7_mXDZ-IMRaBulT209U2_J3t3PvUUhK9tXaFc6WWhDVTt9BlXlYD2o1wqt9ilfKnAn5rNxH6Am8QnLD4jpi41E-nI8ABW55P1scrgvkk");
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(61, 13, 31, 0.8) 0%, transparent 60%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .category-tag {
+            background: var(--c-raspberry);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Content Body */
+        .content-body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--c-plum-dark);
+        }
+
+        .content-body h2 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--c-plum-dark);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .content-body h2::before {
+            content: '';
+            position: absolute; left: 0; top: 0.3em; bottom: 0.3em; width: 4px;
+            background: var(--c-raspberry);
+            border-radius: 2px;
+        }
+
+        .content-body p { margin-bottom: 1.5rem; }
+
+        .lead-text {
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: var(--c-plum-light);
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid rgba(61, 13, 31, 0.05);
+            box-shadow: 0 10px 30px rgba(61, 13, 31, 0.03);
+        }
+
+        .quote-text {
+            font-family: 'Unbounded', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--c-raspberry);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--c-plum-light);
+            font-weight: 600;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(61, 13, 31, 0.05);
+        }
+
+        .widget-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .author-mini {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .author-mini img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        
+        .related-link {
+            display: block;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: var(--c-plum-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .related-link:hover { color: var(--c-raspberry); }
+
+        .product-card-mini {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1rem;
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 12px;
+            transition: background 0.3s;
+        }
+        .product-card-mini:hover { background: var(--c-bg-light); }
+        .product-card-mini img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+
+        /* Read Next */
+        .read-next {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(61, 13, 31, 0.1);
+        }
+        
+        .read-next-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .next-card {
+            display: block;
+            text-decoration: none;
+            group: ;
+        }
+        .next-img {
+            aspect-ratio: 16/9;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        .next-card:hover .next-img { transform: scale(1.02); }
+        .next-title { font-size: 1.25rem; font-weight: 700; color: var(--c-plum-dark); line-height: 1.3; }
+
+        /* --- Footer Styles --- */
+        .main-footer {
+            background-color: var(--c-plum-dark); color: #FFDEE6; padding: 5rem 0 2rem 0;
+            position: relative; overflow: hidden; margin-top: 4rem;
+        }
+        .footer-texture {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 80% 20%, #5C2A3B 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; position: relative; z-index: 1;
+        }
+        .footer-brand h3 { font-family: 'Unbounded', serif; font-size: 1.8rem; color: var(--c-white); margin-bottom: 1rem; }
+        .footer-brand p { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; max-width: 300px; }
+        .footer-heading { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--c-raspberry); margin-bottom: 1.5rem; display: block; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; padding: 0px; }
+        .footer-link { color: #FFDEE6; text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; width: fit-content; }
+        .footer-link:hover { color: var(--c-white); transform: translateX(5px); text-shadow: 0 0 10px rgba(255, 194, 207, 0.3); }
+        .social-row { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex; align-items: center; justify-content: center; color: var(--c-white); transition: all 0.3s;
+        }
+        .social-icon:hover { background: var(--c-raspberry); border-color: var(--c-raspberry); transform: scale(1.1) rotate(5deg); }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.6; position: relative; z-index: 1; }
+        
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero { height: auto; min-height: 400px; padding: 2rem; }
+            .article-h1 { font-size: 2.5rem; }
+            .content-body { font-size: 1rem; }
+            .pull-quote { padding: 2rem; }
+            .quote-text { font-size: 1.2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+
+   <header>
+        <div class="nav-wrapper">
+            <div style="display:flex; gap:0.75rem; align-items:center;">
+                <div style="width:40px; height:40px;"><svg fill="#D62F58" viewBox="0 0 48 48"><path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path></svg></div>
+                <a href="index.html" class="logo">PrettyMe</a>
+            </div>
+            <nav style="display:flex; align-items:center; gap:2.5rem;" class="hidden md:flex">
+                <div style="display:flex; gap:2rem;">
+                    <a href="journal.html" class="nav-link" style="color:var(--c-raspberry)">Назад до Процедур</a>
+                </div>
+                <a href="shop-all.html" class="btn-shop">Купити все</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="article-wrapper">
+        
+        <!-- Main Article Column -->
+        <article>
+            <div class="article-hero">
+                <div class="hero-bg"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="category-tag">У центрі уваги: інгредієнти</span>
+                    <h1 class="article-h1">Сила гіалуронової кислоти: Глибоке занурення</h1>
+                    <div class="article-meta">
+                        <span>Автор: Дар'я Сiчова</span>
+                        <span>•</span>
+                        <span>5 хв читання</span>
+                        <span>•</span>
+                        <span>12 Жовтня 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <p class="lead-text">
+                    Гіалуронова кислота (HA) — це не просто модний тренд, що з'являється у кожній рекламі. Це фундаментальний будівельний блок вашої шкіри, який відповідає за її пружність, молодість та те саме бажане "внутрішнє сяйво".
+                </p>
+
+                <p>Але з віком наші природні запаси вичерпуються. Саме тому розуміння того, як поповнити їх, є ключем до ефективного догляду. Давайте розберемося, чому цей інгредієнт став золотим стандартом і чому не всі сироватки однакові.</p>
+
+                <h2>Магніт для вологи</h2>
+                <p>Уявіть собі молекулу, здатну утримувати воду в 1000 разів більше власної ваги. Саме так працює HA. Вона діє як губка, притягуючи вологу з навколишнього середовища та, що важливіше, з глибоких шарів дерми до поверхні шкіри.</p>
+                <p>Цей процес миттєво "наповнює" клітини, розгладжуючи дрібні лінії зневоднення та створюючи той самий ефект пружності, який ми так любимо.</p>
+
+                <div class="pull-quote">
+                    <p class="quote-text">"Секрет не в кількості кислоти, а в розмірі її молекул. Тільки правильний баланс забезпечує справжнє зволоження."</p>
+                    <span class="quote-author">— Дар'я Сiчова, Головний технолог</span>
+                </div>
+
+                <h2>Чому розмір має значення?</h2>
+                <p>Більшість бюджетних засобів використовують лише один тип молекул — великі. Вони залишаються на поверхні, створюючи плівку. Це непогано для захисту, але не дає глибокого ефекту.</p>
+                <p>У продуктах <strong>PrettyMe</strong> ми використовуємо мультимолекулярний комплекс:</p>
+                <ul style="list-style: disc; padding-left: 2rem; margin-bottom: 1.5rem;">
+                    <li><strong>Високомолекулярна HA:</strong> Залишається на поверхні, миттєво розгладжує та захищає.</li>
+                    <li><strong>Низькомолекулярна HA:</strong> Проникає глибоко в епідерміс, стимулюючи вироблення власної кислоти та забезпечуючи тривале зволоження.</li>
+                </ul>
+
+                <h2>Як отримати максимум?</h2>
+                <p>Ось головний секрет, який часто ігнорують: наносьте сироватку з гіалуроновою кислотою на <strong>злегка вологу шкіру</strong>.</p>
+                <p>Якщо нанести її на суху шкіру в сухому приміщенні, вона може парадоксальним чином витягнути вологу з вашої шкіри назовні. Волога основа (після тоніка або термальної води) дає кислоті "ресурс" для роботи, запечатуючи воду всередині клітин. Обов'язково закривайте її кремом, щоб створити оклюзивний шар.</p>
+            </div>
+
+            <!-- Read Next Section -->
+            <div class="read-next">
+                <h3 class="widget-title" style="border:none; font-size:1.5rem;">Читайте далі</h3>
+                <div class="read-next-grid">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s" class="next-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMvi7fIxuMO5ZV0Is5tvMFbOrQ8xc7Q003zE4jwVurCFdBF_D82LI9pVx8VSma-PDSRrdj9CS4b0An95H3sK-JYlvgRFeQYRPg8eYUOeaGOnyyx8yduv1r1icmv8oPXz264x51XohsdxKSnKrvRQCzosRaOKjPTVTHhabnqaHc4x0Ar7yz2vErLwHI_9MDTwdGRJ0qahuv13fdOzGOHlPMhL5YFLw43tA-PxEwQFRgLr_EaIifVi5aawFYr1c32PYC2cZH9kxEWBM" class="next-img" alt="Oils Guide">
+                        <h4 class="next-title">Повний гід по оліях для обличчя: Яка потрібна саме вам?</h4>
+                    </a>
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s" class="next-card">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxfw3v24TC8CBlGUlhJvaXHd-PlX4GokrapqDPSsqgFuyP8_y5hWrvOKgJdins9ZnUDBBSjrre8PvVGGhoB8GLMZL6cFHTg_AN_3HuYN_IWfEw3pDhyzx1iijAEZlnwFiBZmBjU1cfcmTxVWUbZUBI2nHU4KJljpA3yehqcXrV3MCwLjZ6U3yRHWcsIixak6XGkh1X0EXcduZ3oxFtY7hxR-os-zL90mYMAKm-ut4diuuDWsKbuMhBjjd09icEyO5dcVYA8aB9xLc" class="next-img" alt="Vitamin C">
+                        <h4 class="next-title">Розшифровка вітаміну C: Як обрати стабільну формулу</h4>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="sidebar hidden lg:block">
+            <div class="sidebar-widget">
+                <h4 class="widget-title">Автор</h4>
+                <div class="author-mini">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Maria">
+                    <div>
+                        <div style="font-weight:700; font-size:0.9rem;">Дар'я Сiчова</div>
+                        <div style="font-size:0.75rem; opacity:0.7;">Головний технолог</div>
+                    </div>
+                </div>
+                <p style="font-size:0.85rem; color:var(--c-plum-light); line-height:1.5;">Експерт з розробки косметичних формул з 10-річним досвідом у біохімії.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">Згадані продукти</h4>
+                <a href="shop-all.html" class="product-card-mini">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojOLif1PPTJhsLVFvpMmMMcYaiBJ4hmoViNec1zRRxp8WDXIpu4eZzWukhptA0b7TfFJasJVi4B2YTyMTapfj0VvV3wOpxGK3yokVnh06eF-zMpt_Pt-w8FzgA1codDm-RHr6QU2llXx6IX36ZQllhxcSXOWEBq7qfK_7zkrrNZydQYaemPGhRZiyxrsbFM4eTuK1VrXvwnV0UOkyHS8_7TlEqK6qvLw7gCeZ-cs1vGfsKmqQQBS5u3lLeYVZpR8Y9RqMjnDv6LQ" alt="Serum">
+                    <div>
+                        <div style="font-weight:700; font-size:0.9rem; color:var(--c-plum-dark);">Radiant Glow Serum</div>
+                        <div style="font-size:0.8rem; color:var(--c-raspberry); margin-top:0.2rem;">Купити →</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">Популярне</h4>
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s" class="related-link">5 ознак того, що ваш бар'єр шкіри пошкоджено</a>
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s" class="related-link">Чому SPF потрібен взимку</a>
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH7OGVAcO-2ttDRyYbp00sKjmxl-68hrP98g&s" class="related-link">Ретинол для початківців</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-texture"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>PrettyMe.</h3>
+                    <p>ДАШУЛЯ ТОП.</p>
+                </div>
+                <div>
+                    <span class="footer-heading">Меню</span>
+                    <ul class="footer-links">
+                        <li><a href="shop-all.html" class="footer-link">Всі Товари</a></li>
+                        <li><a href="ourstory.html" class="footer-link">Наша Історія</a></li>
+                        <li><a href="journal.html" class="footer-link">Журнал</a></li>
+                        <li><a href="glossary.html" class="footer-link">Глосарій Інгредієнтів</a></li>
+                        <li><a href="gift-card.html" class="footer-link">Подарункові Карти</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span class="footer-heading">Підтримка</span>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ та Доставка</a></li>
+                        <li><a href="refund.html" class="footer-link">Повернення</a></li>
+                        <li><a href="contacts.html" class="footer-link">Контакти</a></li>
+                    </ul>
+                    <div class="social-row">
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" class="social-icon" aria-label="Pinterest">
+                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 PrettyMe Co. Всі права захищено.</span>
+                <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
+                    Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function toggleMenu() {
+            if (mobileMenu.style.opacity === '1') {
+                mobileMenu.style.opacity = '0';
+                mobileMenu.style.pointerEvents = 'none';
+                document.body.style.overflow = '';
+            } else {
+                mobileMenu.style.opacity = '1';
+                mobileMenu.style.pointerEvents = 'all';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    </script>
+
+</body>
+</html>

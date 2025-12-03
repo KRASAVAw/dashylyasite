@@ -452,16 +452,7 @@
             width: fit-content; /* Critical: Prevents stretching to 100% width in flex containers */
         }
 
-        .btn-secondary::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 1px;
-            background: var(--c-plum-dark);
-            margin-top: 2px;
-            transition: transform 0.3s ease;
-            transform-origin: right;
-        }
+
 
         .btn-secondary:hover::after {
             transform: scaleX(0.5);
@@ -702,7 +693,7 @@
                 </p>
                 <div class="hero-actions">
                     <a href="shop-all.html" class="btn btn-primary">Відкрити Лінійку</a>
-                    <a href="shop-all.html" class="btn btn-secondary">Переглянути Склад</a>
+                    <a href="shop-all.html" class="btn btn-secondary">Переглянути Склад <span style="padding-left: 10px; font-size:1.2em; vertical-align:middle;">&rarr;</span></a>
                 </div>
             </div>
 
@@ -2024,57 +2015,57 @@
 </section>
 
 <footer class="main-footer">
-    <div class="footer-texture"></div>
-    <div class="container">
-        
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>PrettyMe.</h3>
-                <p>ДАШУЛЯ ТОП.</p>
-            </div>
+        <div class="footer-texture"></div>
+        <div class="container">
+            
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>PrettyMe.</h3>
+                    <p>ДАШУЛЯ ТОП.</p>
+                </div>
 
-            <div>
-                <span class="footer-heading">Меню</span>
-                <ul class="footer-links">
-                    <li><a href="shop-all.html" class="footer-link">Всі Товари</a></li>
-                    <li><a href="ourstory.html" class="footer-link">Наша Історія</a></li>
-                    <li><a href="journal.html" class="footer-link">Журнал</a></li>
-                    <li><a href="#" class="footer-link">Глосарій Інгредієнтів</a></li>
-                    <li><a href="#" class="footer-link">Подарункові Карти</a></li>
-                </ul>
-            </div>
+                <div>
+                    <span class="footer-heading">Меню</span>
+                    <ul class="footer-links">
+                        <li><a href="shop-all.html" class="footer-link">Всі Товари</a></li>
+                        <li><a href="ourstory.html" class="footer-link">Наша Історія</a></li>
+                        <li><a href="journal.html" class="footer-link">Журнал</a></li>
+                        <li><a href="glossary.html" class="footer-link">Глосарій Інгредієнтів</a></li>
+                        <li><a href="gift-card.html" class="footer-link">Подарункові Карти</a></li>
+                    </ul>
+                </div>
 
-            <div>
-                <span class="footer-heading">Підтримка</span>
-                <ul class="footer-links">
-                    <li><a href="#" class="footer-link">FAQ та Доставка</a></li>
-                    <li><a href="#" class="footer-link">Повернення</a></li>
-                    <li><a href="#" class="footer-link">Контакти</a></li>
-                </ul>
-                
-                <div class="social-row">
-                    <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-                    <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                    </a>
-                    <a href="https://pinterest.com" target="_blank" class="social-icon" aria-label="Pinterest">
-                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </a>
+                <div>
+                    <span class="footer-heading">Підтримка</span>
+                    <ul class="footer-links">
+                        <li><a href="faq.html" class="footer-link">FAQ та Доставка</a></li>
+                        <li><a href="refund.html" class="footer-link">Повернення</a></li>
+                        <li><a href="contacts.html" class="footer-link">Контакти</a></li>
+                    </ul>
+                    
+                    <div class="social-row">
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" class="social-icon" aria-label="Pinterest">
+                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            <span>&copy; 2025 PrettyMe Co. Всі права захищено.</span>
-            <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
-                Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
-            </span>
-        </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 PrettyMe Co. Всі права захищено.</span>
+                <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
+                    Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
+                </span>
+            </div>
 
-    </div>
-</footer>
+        </div>
+    </footer>
 
     <script>
 
