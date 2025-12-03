@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Квiткарня - Сяй Упевнено</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZWUyYjViIiB2aWV3Qm94PSIwIDAgNDggNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI0IDQ1LjgwOTZDMTkuNjg2NSA0NS44MDk2IDE1LjQ2OTggNDQuNTMwNSAxMS44ODMyIDQyLjEzNEM4LjI5NjY3IDM5LjczNzYgNS41MDEyOCAzNi4zMzE0IDMuODUwNTYgMzIuMzQ2MkMyLjE5OTg1IDI4LjM2MSAxLjc2Nzk0IDIzLjk3NTggMi42MDk0NyAxOS43NDUyQzMuNDUxIDE1LjUxNDUgNS41MjgxNiAxMS42Mjg0IDguNTc4MjkgOC41NzgzQzExLjYyODQgNS41MjgxNyAxNS41MTQ1IDMuNDUxMDEgMTkuNzQ1MiAyLjYwOTQ4QzIzLjk3NTggMS43Njc5NSAyOC4zNjEgMi4xOTk4NiAzMi4zNDYyIDMuODUwNTdDMzYuMzMxNCA1LjUwMTI5IDM5LjczNzYgOC4yOTY2OCA0Mi4xMzQgMTEuODgzM0M0NC41MzA1IDE1LjQ2OTggNDUuODA5NiAxOS42ODY1IDQ1LjgwOTYgMjRMMjQgMjRMMjQgNDUuODA5NloiPjwvcGF0aD48L3N2Zz4=">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:opsz,wght,SOFT,WONK@9..144,100..900,100,1&family=Unbounded:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -35,33 +35,36 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
-		
+        
+        html {
+            scroll-behavior: smooth;
+        }
 
         .text-primary {
-        color: #ee2b5b;
+            color: #ee2b5b;
         }
-
 
         .nav-left {
             display: flex;
-            gap: 0.75rem; /* Уменьшили отступ между лого и текстом (было 1rem) */
+            gap: 0.75rem; 
             align-items: center;
+            z-index: 102; /* Above mobile menu overlay */
+            position: relative;
         }
 
-
         .logo-icon {
-            width: 40px;   /* Оптимальный размер логотипа */
+            width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0; /* Запрещает логотипу сжиматься на телефонах */
+            flex-shrink: 0;
         }
 
-
         .logo-icon svg {
-            width: 100%;  /* Растягиваем SVG на весь контейнер 40x40 */
+            width: 100%;
             height: 100%;
             object-fit: contain;
         }
@@ -96,7 +99,8 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-			font-family: 'Unbounded', sans-serif;
+            font-family: 'Unbounded', sans-serif;
+            text-align: center;
         }
 
         /* Noise Texture Overlay */
@@ -121,7 +125,7 @@
             height: var(--nav-height);
             z-index: 100;
             /* Glassmorphism */
-            background: rgba(255, 240, 243, 0.7);
+            background: rgba(255, 240, 243, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(214, 47, 88, 0.08);
@@ -137,14 +141,17 @@
 
         .logo {
             font-family: 'Unbounded', serif;
-            font-size: 1.75rem;
+            font-size: 1.5rem; /* Slightly smaller for better mobile fit */
             font-weight: 700;
-            /* Font Variation Settings for personality */
             font-variation-settings: "SOFT" 100, "WONK" 1;
             text-transform: uppercase;
             color: var(--c-plum-dark);
             text-decoration: none;
             letter-spacing: -0.02em;
+        }
+        
+        @media (min-width: 768px) {
+            .logo { font-size: 1.75rem; }
         }
 
         .nav-right {
@@ -195,12 +202,112 @@
             color: var(--c-white);
             padding: 0.75rem 1.75rem;
             box-shadow: 0 4px 15px rgba(214, 47, 88, 0.2);
+            white-space: nowrap;
         }
 
         .btn-shop:hover {
             transform: scale(1.05);
             background-color: var(--c-raspberry-hover);
             box-shadow: 0 6px 20px rgba(214, 47, 88, 0.3);
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 102; /* Above overlay */
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: var(--c-plum-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-btn span:nth-child(1) { top: 0; }
+        .mobile-menu-btn span:nth-child(2) { top: 9px; }
+        .mobile-menu-btn span:nth-child(3) { top: 18px; }
+        
+        /* Hamburger Animation */
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 9px;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 240, 243, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 101;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 2rem;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .mobile-nav-link {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--c-plum-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* Close Button inside Mobile Menu */
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px; /* Align with nav items visually */
+            right: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--c-plum-dark);
+            padding: 0.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            z-index: 105;
+        }
+        
+        .mobile-menu-close:hover {
+            color: var(--c-raspberry);
+            transform: rotate(90deg);
         }
 
         /* --- Hero Section --- */
@@ -282,7 +389,8 @@
         .hero-heading {
             font-family: 'Unbounded', serif;
             font-variation-settings: "SOFT" 50, "WONK" 0;
-            font-size: clamp(3rem, 3vw, 5rem);
+            /* Adaptive Font Size - Further Reduced minimum */
+            font-size: clamp(2rem, 3vw, 5rem);
             line-height: 1.1;
             color: var(--c-plum-dark);
             font-weight: 600;
@@ -316,6 +424,7 @@
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap; /* Wraps buttons on very small screens */
             
             /* Entry Animation */
             opacity: 0;
@@ -340,6 +449,7 @@
             padding: 0;
             background: transparent;
             border-radius: 0;
+            width: fit-content; /* Critical: Prevents stretching to 100% width in flex containers */
         }
 
         .btn-secondary::after {
@@ -381,12 +491,10 @@
             transform: perspective(1000px) rotateY(0deg) scale(1.02);
         }
 
-        /* Using a placeholder from Unsplash - Beauty Editorial */
         .hero-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Tinting the image via CSS filter to match brand */
             filter: sepia(0.2) contrast(1.1); 
         }
 
@@ -445,50 +553,82 @@
 
         /* --- Responsive Design --- */
         @media (max-width: 968px) {
-            .hero-heading { font-size: 3.5rem; }
-            .nav-links { display: none; } /* Simplified for demo */
+            .nav-links { display: none; } 
             .btn-shop { display: none; }
             
-            /* Hamburger replacement */
             .mobile-menu-btn {
                 display: block;
-                width: 30px;
-                height: 20px;
-                position: relative;
-                cursor: pointer;
             }
-            .mobile-menu-btn span {
-                display: block;
-                position: absolute;
-                height: 2px;
+            
+            .hero {
+                min-height: auto; /* Remove strict 100vh to avoid cutoffs */
+                padding-top: calc(var(--nav-height) + 2rem);
+                padding-bottom: 4rem;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem; /* Tighter gap */
+                padding-bottom: 0;
+            }
+            
+            .hero-content {
+                align-items: center;
+                text-align: center;
+                margin: 0 auto;
                 width: 100%;
-                background: var(--c-plum-dark);
-                border-radius: 2px;
+                gap: 1rem;
             }
-            .mobile-menu-btn span:nth-child(1) { top: 0; }
-            .mobile-menu-btn span:nth-child(2) { top: 9px; }
-            .mobile-menu-btn span:nth-child(3) { top: 18px; }
+            
+            .pill-label { margin: 0 auto 0.5rem auto; }
+            
+            .hero-actions {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .hero-visual {
+                max-width: 320px; /* Reduced visual size for fitting */
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .image-wrapper {
+                max-width: 100%; 
+            }
+            
+            .blob {
+                max-width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
+            .container { padding: 0 1.25rem; }
+            
+            .hero-heading {
+                /* Even smaller for mobile to prevent overflow of long words */
+                font-size: 2rem; /* Fixed smaller size for safety */
+                word-wrap: break-word; 
+                line-height: 1.2;
             }
-            .hero-content {
-                margin: 0 auto;
-                align-items: center;
-            }
-            .pill-label { margin: 0 auto 1rem auto; }
-            .hero-actions { justify-content: center; }
+            
             .image-wrapper { 
-                max-width: 400px; 
-                margin: 0 auto;
-                aspect-ratio: 1/1; /* Square on mobile */
-                border-radius: 50% 50% 0 0; /* Dome shape */
+                aspect-ratio: 1/1; 
+                border-radius: 50% 50% 0 0; 
             }
-            .badge { right: 0; }
+            
+            .badge { 
+                right: 0; 
+                top: 20px;
+                padding: 0.5rem 1rem;
+            }
+            
+            .deco-circle {
+                width: 80px;
+                height: 80px;
+                bottom: -20px;
+                left: -20px;
+            }
         }
     </style>
 </head>
@@ -499,18 +639,35 @@
     <!-- Transition Overlay -->
     <div id="page-transition" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #1f050a; z-index: 10000; transform: translateY(100%); transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); pointer-events: none;"></div>
 
-    <header>
-	
-        <div class="container nav-wrapper">
-			
-<div class="nav-left">
-    <div class="logo-icon text-primary">
-        <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
-        </svg>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <!-- Close Button -->
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <ul class="mobile-nav-links">
+            <li><a href="ourstory.html" class="mobile-nav-link">Наша Історія</a></li>
+            <li><a href="routines.html" class="mobile-nav-link">Ритуали</a></li>
+            <li><a href="journal.html" class="mobile-nav-link">Журнал</a></li>
+            <li><a href="shop-all.html" class="mobile-nav-link">Магазин</a></li>
+        </ul>
+        <a href="shop-all.html" class="btn btn-shop" style="display: inline-flex;">Купити Зараз</a>
     </div>
-    <a href="#" class="logo">Квiткарня</a>
-</div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="nav-left">
+                <div class="logo-icon text-primary">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"></path>
+                    </svg>
+                </div>
+                <a href="#" class="logo">Квiткарня</a>
+            </div>
             
             <nav class="nav-right">
                 <ul class="nav-links">
@@ -520,7 +677,7 @@
                 </ul>
                 <a href="shop-all.html" class="btn btn-shop">Купити Зараз</a>
                 
-                <div class="mobile-menu-btn d-lg-none" style="display:none;">
+                <div class="mobile-menu-btn" id="menuBtn">
                     <span></span><span></span><span></span>
                 </div>
             </nav>
@@ -564,7 +721,6 @@
 
     <!-- 
       NEW SECTION: 3D ANIMATED BUTTON TO PRESENTATION 
-      This is placed immediately after the Hero section.
     -->
     <style>
         .section-portal {
@@ -592,18 +748,24 @@
             transform-style: preserve-3d;
             cursor: pointer;
             transition: transform 0.1s ease-out; /* Fast response for mouse tilt */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Stack children */
+            align-items: center;
         }
 
         .btn-3d-container {
             position: relative;
             transform-style: preserve-3d;
+            max-width: 90%;
         }
 
         /* The main button block */
         .btn-3d {
             display: block;
             font-family: 'Unbounded', serif;
-            font-size: clamp(3rem, 8vw, 7rem); /* Huge font */
+            font-size: clamp(1.5rem, 6vw, 7rem); /* Adjusted clamp for mobile */
             font-weight: 800;
             font-style: italic;
             text-transform: uppercase;
@@ -613,6 +775,7 @@
             background: rgba(255, 255, 255, 0.03);
             border: 2px solid rgba(230, 57, 104, 0.5);
             border-radius: 20px;
+            text-align: center;
             
             /* 3D Properties */
             transform: translateZ(20px);
@@ -680,10 +843,6 @@
 
         /* "Click Me" hint */
         .portal-hint {
-            position: absolute;
-            bottom: -3rem;
-            left: 50%;
-            transform: translateX(-50%);
             color: rgba(255, 255, 255, 0.4);
             font-size: 0.9rem;
             letter-spacing: 0.2em;
@@ -691,10 +850,20 @@
             font-family: 'Unbounded', sans-serif;
             opacity: 0;
             transition: opacity 0.3s;
+            white-space: nowrap;
+            /* Changed positioning to flow with document to avoid cut-off */
+            margin-top: 2rem;
+            position: relative;
         }
 
         .btn-3d-wrapper:hover .portal-hint {
             opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .section-portal { padding: 5rem 0; }
+            .btn-3d { padding: 1.5rem 2rem; width: 100%; word-break: break-all; }
+            .portal-hint { opacity: 1; margin-top: 1.5rem; } /* Always show hint on mobile */
         }
 
     </style>
@@ -713,69 +882,8 @@
         <!-- Decorative particles (JS will spawn more) -->
         <div style="position:absolute; width:100%; height:100%; pointer-events:none; z-index:2;" id="particles-container"></div>
     </section>
-
-    <script>
-        // --- 3D Tilt Logic for Button ---
-        const btnWrapper = document.getElementById('portal-btn');
-        const btnContainer = btnWrapper.querySelector('.btn-3d-container');
-        
-        btnWrapper.addEventListener('mousemove', (e) => {
-            const rect = btnWrapper.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Calculate rotation (center is 0)
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -15; // Max 15deg rotation
-            const rotateY = ((x - centerX) / centerX) * 15;
-
-            btnContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        btnWrapper.addEventListener('mouseleave', () => {
-            // Reset rotation
-            btnContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
-        });
-
-        // --- Transition Logic ---
-        document.getElementById('link-presentation').addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = this.href;
-            
-            // 1. Play Curtain Animation
-            const curtain = document.getElementById('page-transition');
-            curtain.style.transform = 'translateY(0%)';
-            
-            // 2. Wait for animation, then change page
-            setTimeout(() => {
-                window.location.href = target;
-            }, 800); // 800ms matches CSS transition time
-        });
-
-        // --- Simple Particle System for Portal ---
-        const pContainer = document.getElementById('particles-container');
-        setInterval(() => {
-            const p = document.createElement('div');
-            p.classList.add('portal-particle');
-            const size = Math.random() * 6 + 2;
-            p.style.width = `${size}px`;
-            p.style.height = `${size}px`;
-            p.style.left = `${Math.random() * 100}%`;
-            p.style.top = `${Math.random() * 100}%`;
-            p.style.animationDuration = `${Math.random() * 2 + 1}s`;
-            
-            pContainer.appendChild(p);
-            
-            // Cleanup
-            setTimeout(() => {
-                p.remove();
-            }, 3000);
-        }, 200);
-    </script>
-	
-	<style>
+    
+    <style>
     /* --- Section 3: Featured Product --- */
     .section-product {
         padding: 8rem 0;
@@ -824,17 +932,20 @@
         border-radius: 160px 160px 0 0;
         bottom: 0;
         z-index: 1;
-		border-radius: 24px;
+        border-radius: 24px;
+        max-width: 90%;
     }
 
     .product-img {
         position: relative;
         z-index: 2;
         width: auto;
+        max-width: 100%;
         height: 520px; /* Tall product image */
         filter: drop-shadow(0 20px 40px rgba(61, 13, 31, 0.15));
         transition: transform 0.5s var(--ease-out-expo);
-		border-radius: 24px;
+        border-radius: 24px;
+        object-fit: contain;
     }
 
     .product-stage:hover .product-img {
@@ -915,6 +1026,7 @@
         gap: 1.5rem;
         align-items: center;
         margin-top: 1rem;
+        flex-wrap: wrap;
     }
 
     .shipping-note {
@@ -951,7 +1063,7 @@
 
     .section-title {
         font-family: 'Unbounded', serif;
-        font-size: 3rem;
+        font-size: clamp(2rem, 4vw, 3rem);
         color: var(--c-plum-dark);
         margin-bottom: 1rem;
     }
@@ -959,6 +1071,7 @@
     .section-sub {
         color: var(--c-plum-light);
         font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
     .benefits-grid {
@@ -1001,6 +1114,7 @@
         justify-content: center;
         color: var(--c-raspberry);
         transition: transform 0.4s var(--ease-elastic);
+        flex-shrink: 0; /* Prevent squishing */
     }
     
     .benefit-card:hover .icon-circle {
@@ -1054,15 +1168,47 @@
 
     /* Responsive */
     @media (max-width: 968px) {
-        .product-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-        .product-stage { height: 400px; }
-        .product-img { height: 350px; }
-        .product-details { align-items: center; }
+        .section-product { padding: 4rem 0; }
+        
+        .product-grid { 
+            grid-template-columns: 1fr; 
+            gap: 3rem; 
+            text-align: center; 
+        }
+        
+        .product-stage { 
+            height: auto;
+            min-height: 400px;
+        }
+        
+        .product-img { 
+            height: auto;
+            max-height: 400px;
+            width: 100%;
+        }
+        
+        .product-details { 
+            align-items: center; 
+        }
+        
+        .rating-row {
+            justify-content: center;
+        }
+        
+        .product-title {
+            font-size: 2.5rem;
+        }
+        
         .product-desc { margin: 0 auto; }
         .product-actions { justify-content: center; }
         
-        .benefits-grid { grid-template-columns: 1fr; }
-        .benefit-card { align-items: center; text-align: center; }
+        .benefits-header { margin-bottom: 3rem; }
+        .benefits-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .benefit-card { 
+            align-items: center; 
+            text-align: center; 
+            padding: 2rem;
+        }
     }
 </style>
 
@@ -1114,58 +1260,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="section-benefits">
-    <div class="container">
-        
-        <div class="benefits-header">
-            <span class="section-overline">Чому Це Працює</span>
-            <h2 class="section-title">Клінічно Ніжна. <br>Помітно Потужна.</h2>
-            <p class="section-sub">Ми відмовилися від наповнювачів на користь активних компонентів, що бережуть ваш бар'єр і дарують справжнє сяйво.</p>
-        </div>
-
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="icon-circle">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                </div>
-                <div>
-                    <h3 class="benefit-title">Глибоке Зволоження</h3>
-                    <p class="benefit-desc">Різкомолекулярна гіалуронова кислота проникає глибоко, миттєво розгладжуючи лінії.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <div class="icon-circle">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                </div>
-                <div>
-                    <h3 class="benefit-title">Рівний Тон</h3>
-                    <p class="benefit-desc">Ніацинамід невтомно працює над освітленням пігментних плям та заспокоєнням почервонінь.</p>
-                </div>
-            </div>
-
-            <div class="benefit-card">
-                <div class="icon-circle">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div>
-                    <h3 class="benefit-title">Підтримка Бар'єру</h3>
-                    <p class="benefit-desc">Кераміди замикають вологу, захищаючи шкіру від забруднень та щоденного стресу.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="ingredient-strip">
-            <span class="ing-pill">Гіалуронова Кислота</span>
-            <span class="ing-pill">Ніацинамід</span>
-            <span class="ing-pill">Трояндова Вода</span>
-            <span class="ing-pill">Сквалан</span>
-            <span class="ing-pill">✨ Кохана & Без Жорстокості</span>
-        </div>
-
     </div>
 </section>
 
@@ -1337,6 +1431,7 @@
         letter-spacing: 0.05em;
         text-transform: uppercase;
         font-size: 0.85rem;
+        flex-wrap: wrap; /* Wraps on mobile */
     }
 
     .gold-stars { color: #FFD27D; }
@@ -1457,6 +1552,8 @@
     .ugc-thumbs {
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap; /* Important for mobile */
+        justify-content: center;
     }
 
     .ugc-thumb {
@@ -1485,6 +1582,10 @@
 
     /* Responsive */
     @media (max-width: 968px) {
+        .section-routines { padding: 4rem 0; }
+        
+        .routine-header { margin-bottom: 3rem; }
+        
         .steps-grid {
             grid-template-columns: 1fr;
             gap: 4rem; /* More space for vertical stacking */
@@ -1513,13 +1614,20 @@
         .step-card {
             z-index: 1;
             background: #FFF5F7; /* Ensure opacity blocks line */
-            width: 80%;
+            width: 90%;
             margin: 0 auto;
         }
         
+        .section-reviews { padding-bottom: 4rem; }
         .reviews-grid {
-            grid-template-columns: 1fr; /* Carousel logic would go here, simple stack for CSS only */
-            padding-right: 0;
+            grid-template-columns: 1fr; 
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .pro-tip {
+            width: 90%;
+            font-size: 0.85rem;
         }
     }
 </style>
@@ -1634,10 +1742,7 @@
                     <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_H5OF33eok1Mz0Y4Sy49Uj_QfOOsXDU5sGaaVOxjWnXHTvQZYe3LO9oTTzv8yI2tujmYvjx9Kkhri8veGiMJmeuPBuHXlh0aqf0qGzdEx-38bpzsXA63U_uRHvcIjEcWi70lCWo_3piYnfl6W7PPPRJREGzImQnFT4hr9Yer5GjobflZDzyRIECSWnTKINQwQ9HlJ9xm9tfacgNGz0BUI2YxhL9DPOzQBMUhRIOjIgIPbcwWA9XgSwJQneFho23WF0vbpD8CZu-msXmrsvsVvcYnnQg1OkAY8OnQk-QDvxCzjwW7PgA2PmzV5wRJ5bEy8HLXjdI7puh-62V5NQ5v9L-d9D7zDPg5U27nAdQCJU_Q21KUYCFVIHxUcEFNZiRyVy9Goj_CuwP-ZZgP1Y-7UGjpF1sAw16LToyJ1u8O0CtDhMF5LpVyWuGIaEMzcfxiPkdKTPAFYhksxBp8Jugkviy84XmcCcyQrizgfPm78gsGRUs0X1Z1Ynv9IXzQJX3nAXp9WgykeRBJPUry-00GPAbHcppLjixMKoFV17M2oHHrqm3bbJJangLehHcjC60ruq_Yq_hbm0TZwpWKZ00R3X9KFKRRihB_K7NDW-WSttp3g0uNicS2SSFmSfIX--piBnV667O3VbHVFqkWJTOhC9E-Pceyw3_YDywZh5V5YUhNS8jxAxj00QKhOuBsOl7HDTWoVmv6918j2xwE83D6zQYAwFHtCVBWiHRbLGoLfN6dXJq4O09wJjJT0iewmQx5qaV-JHoUarh7G3qJvJCXNcE4cqJen9tP3BvrksFZ0YDzlOshP_WZImTl1QEAM2rksaxrAyIisbQHmZ5oZsytO4C7obz9xxdI59qlQpoPI5KC-UqqPrCaZpcrPs5LpKwqTNPBde0V-Bglmfebc0jENewVM5zjZWFEzb0-glbGfVx1Yyz5w_BiNE-8yfnMK6XBfAtHh9AQbqkA4pF8fqxXHNYOLV5MYqctK_Fq6UPJ6h2sRdQpo52L8UnyW_5jU615sONu-wXcv12uiyLqbFe7OJeEBKKm7mA8KNjZTX9cV-YhlZhT22U0pktBW5hdBMD55mWadOuK1r9hcX1e99uCI0Gg9aI9NfB96HmSbQisNPXV9bOFXRZfZ17OomCLc_axCTDfAg4ZAeoYPMAA-IxAEP0R0QbuHU1AAMSYiFQpqQBCQhR89AIDe0BjrfWO1KyB-5sbRoZSFu5mSyeCxzff1YzJG7OzO5wuVueJb1RWPEA4-mpWYicIfqfK-M171Xp-tOWP46pTmphOixl8pjThQJUnXrJf6ZGJxvGLw=w1920-h911?auditContext=prefetch" alt="Texture shot" class="ugc-img">
                 </div>
                 <div class="ugc-thumb" style="--r: -3deg;">
-                    <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_HsL2-xLbjIssZ_7HvBbj7qkfy5ePvqWzhgJci3iGNWPBgxpLsDQ9W7-SG35prktLj2i3OLxQOCEVb0xkeJ1TqsVumUqKPRBz8MDfCYT-1OxrdFFNZnsN3s3wbq_PFJgybwL0Bg-oOMOcpT5edEXr2yIopBDmWrtgvA9_lc7OQwC_6je132w2E2K2T1La-ErKuTOxVDgzgd7Fh374YPpWHooVjFCTVk5qoXPCQRNLbuX-aky1Og7GHL4uBRWR7TYamY-zH8H3K_9CsuAHQpv8dySgrISTLZSeHiMS3y1r8U9CX0UD1jOoiKb-z9lG54pOk8dJzO6ZoTow9w_UgJAQRdTH8zke3Ca7TAs1sCWGTrfNSn-neEetbGDKDP0FAPiWdzkJfonTgfo8alhpgXaDMUshcMvfa-mdJf2f1yWPMGF3ch9I2JpOZwi-l8J8ZVzSp781ACQptJ0IxLcCkk1J8-qJ9fe8rpXJXg4N25NFesRLYk-DWGG1W-5i4y-lNkjeZ_gcSD44RHx0z0v2jLvsc6vc1hy2ZKWlnRtwu3rvg7s91xrZG1B4iaQulmVHNsR3XMujAR6EGgcinJBi1JNncp7Sm9K2r4l5vH3BKL5E-6zVDzz2tqPSFIuQNWCTYuXlrVsaPayQQAbm5KMAODOZNDiSzRTmgJaBGswNbtxbdzlB74SC5-dfhiB9coB8HkAfqasfaGBIsltMbUGl6EIV_vTIW4JfXqdx-gaorVVNTdU21CrWgq9iZv5LdqrZ8SgT3MHJwNdsJIMRoTz_NCjY-THcZWAnpzAH3_4sRzklOEtxKESGt8Yna3u_2fAvzfAIG6-goZ7Kz4IRFIDDX5B_ch1RGqBahVXyEckEr3U3xsAGSiBT-1rCtHA1IW_qz7Ov910c7QVF_31BoW8JPw4cz-2NiXybjLXfP31mdiFcGQmxjwvdtljc7bmqThztO8jpuSDr-K8WWCeH7uqkq4mDgSOTKifOnX9DxwRFjajxyixH0kJgcig_rLY6ojOr0ERB8DZB9CxCVQEfoScw9D4IMpQKpkdmWMjVvq6KKIxrys-8Y8f-gnj_pki9o7HnHB31OcTKHJHE9E8frK98CRcHBykCm3SOytz5KhG2NviqlowCowQassgGHd08O35kQOOE4KkJvknRIl7hzuCMLwqMdu3tGElPJazgGVe-TthxJxRWQQjEexTs_yQQcTYOQNga7hv72W-6Wjz72HLemvGFMlZjf1jfpFayRYIfB-DpeooXGostMqhloF9neyixX73uSvOEM-CRIL2Rg4pnbZTy5qShPV2_pFeL1TKg=w1920-h911?auditContext=prefetch" alt="Shelfie" class="ugc-img">
-                </div>
-                <div class="ugc-thumb" style="--r: 4deg;">
-                    <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_E9nR16L-8MT8IPuzXLd2oTZjZuLK0jT_X-DpeZLjz-bquIlauOHOOTQT5hVLtKWChm4p7xEHnICs_if9Gu4vgN6LnNVuD1fQMkq8whr0DBGxPZvHUVB1ZyHjIMu9ls_RxatdLi3BB9m7Luqb8bAyTm240Nh7ya8SozMZ8qFPl1FvnGlqPKnkqQ8uVTzqjp-fJu1fkIIuVvxv1XADnkSJ_s5FHPyFVb7hc4UJ4D0G3l2kEzuSvrQWa1YGdl_ktFrNmrpaW5Ic3YPc8Q2LAarEoMcPe3KNcZ0ZtIsie4GQh5IOj1ugD3SAjOpcs-935NLOHZfxn0QWi1rTNTnkDhc24p9XB_gYeQzbo-L9zL0vsTK9zVTZpVMDvRCGDV71Gw3NDn14NzLCNtTYrdmC60CH8tzBL64rOIf7aRaa1o0sjFiZHlbLvRU9f7MMw3F4OFPcJWT_gLuk988cJbOuzQMp8arfpYk_qsgeMJ-wrL_NageF6JkddJyL4aNiXLniZ9hX3P2gjtn6l0YhA7GO4LQtY3DDEAhWhznxXSNiXCbjjb_hMgu4JcTSfM1ZfDD76iKMgVYQxiDYHIP5KFhAkKcANcDnrSscqBrKLfwiWM-85b_rXP09VUEpV3yNzx5aQjw-EDS_q0oSOpUcKpqX-R0BXuQkO4s04xNoRHOxGbb6vXQ0QAYdUOahdVTZQfeIYFuWdVDH69lKoXEfAKIaxGLm-l6soOsyejFHb0ZB6LZL5UdGl_kRsJCQTWMOS4o0cTOWB09lFTUA1O8Kqkw_70FG5_jsHqSAl94wu1_pB3HpN95W3A-l3v1cIf0kmmg44fZgMkv3CnCEYwPimNHEl_9h1ADwbW2plWDvPNb7xKPpBZYImEc48Fsx_xcqsyNkaR9mC9N5VGroDnbpNGm_EYuBpKkAkHf9AeYhZCh-8NUvnS_TLP2kvpGv5aTJfRyj_0IqGEjILP6KtEzZCuSXqAGh5K3Ah7jqRuf8d3Z_l9TkIT2uWI4VLufiCEH0tlzWTsJcJdJsEezQ1k3P5UqKpI3W71PXSjfTre55sL0qMb9NHyuOr-47IT993T8XMQS4It6-8JaC5JA4yz_i4qE8G9YensiePqDwJJwf-VcJFwhb5Tmr8I0VdWbZxaUmPx2K8F7zCKvAaH7yXEXUMHQyRJZIdsf9Zk6_0Q9pRAEuBP_vtUXRrNBKrTQTLotJqG_QjCaIA39dhiED2c1AgWmpnFueu-KQV1YB6ylb2sVS7GFhlD4Bh1mnfl_Wa2yIHLJA-cLGkWmWwrsAtmSItQ67ODkrUGzr6tky9eXfU_Gg=w1535-h911?auditContext=prefetch" alt="Product application" class="ugc-img">
+                    <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_HsL2-xLbjIssZ_7HvBbj7qkfy5ePvqWzhgJci3iGNWPBgxpLsDQ9W7-SG35prktLj2i3OLxQOCEVb0xkeJ1TqsVumUqKPRBz8MDfCYT-1OxrdFFNZnsN3s3wbq_PFJgybwL0Bg-oOMOcpT5edEXr2yIopBDmWrtgvA9_lc7OQwC_6je132w2E2K2T1La-ErKuTOxVDgzgd7Fh374YPpWHooVjFCTVk5qoXPCQRNLbuX-aky1Og7GHL4uBRWR7TYamY-zH8H3K_9CsuAHQpv8dySgrISTLZSeHiMS3y1r8U9CX0UD1jOoiKb-z9lG54pOk8dJzO6ZoTow9w_UgJAQRdTH8zke3Ca7TAs1sCWGTrfNSn-neEetbGDKDP0FAPiWdzkJfonTgfo8alhpgXaDMUshcMvfa-mdJf2f1yWPMGF3ch9I2JpOZwi-l8J8ZVzSp781ACQptJ0IxLcCkk1J8-qJ9fe8rpXJXg4N25NFesRLYk-DWGG1W-5i4y-lNkjeZ_gcSD44RHx0z0v2jLvsc6vc1hy2ZKWlnRtwu3rvg7s91xrZG1B4iaQulmVHNsR3XMujAR6EGgcinJBi1JNncp7Sm9K2r4l5vH3BKL5E-6zVDzz2tqPSFIuQNWCTYuXlrVsaPayQQAbm5KMAODOZNDiSzRTmgJaBGswNbtxbdzlB74SC5-dfhiB9coB8HkAfqasfaGBIsltMbUGl6EIV_vTIW4JfXqdx-gaorVVNTdU21CrWgq9iZv5LdqrZ8SgT3MHJwNdsJIMRoTz_NCjY-THcZWAnpzAH3_4sRzklOEtxKESGt8Yna3u_2fAvzfAIG6-goZ7Kz4IRFIDDX5B_ch1RGqBahVXyEckEr3U3xsAGSiBT-1rCtHA1IW_qz7Ov910c7QVF_31BoW8JPw4cz-2NiXybjLXfP31mdiFcGQmxjwvdtljc7bmqThztO8jpuSDr-K8WWCeH7uqkq4mDgSOTKifOnX9DxwRFjajxyixH0kJgcig_rLY6ojOr0ERB8DZB9CxCVQEfoScw9D4IMpQKpkdmWMjVvq6KKIxrys-8Y8f-gnj_pki9o7HnHB31OcTKHJHE9E8frK98CRcHBykCm3SOytz5KhG2NviqlowCowQassgGHd08O35kQOOE4KkJvknRIl7hzuCMLwqMdu3tGElPJazgGVe-TthxJxRWQQjEexTs_yQQcTYOQNga7hv72W-6Wjz72HLemvGFMlZjf1jfpFayRYIfB-DpeooXGostMqhloF9neyixX73uSvOEM-CRIL2Rg4pnbZTy5qShPV2_pFeL1TKg=w1535-h911?auditContext=prefetch" alt="Product application" class="ugc-img">
                 </div>
             </div>
         </div>
@@ -1650,7 +1755,6 @@
     .section-newsletter {
         padding: 6rem 0 8rem 0;
         position: relative;
-        /* Slight overlap capability if needed, or distinct spacing */
         background: linear-gradient(180deg, #FFC2CF 0%, #FFF0F3 100%);
     }
 
@@ -1714,7 +1818,7 @@
 
     .nl-headline {
         font-family: 'Unbounded', serif;
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
         color: var(--c-plum-dark);
         line-height: 1.1;
     }
@@ -1870,10 +1974,14 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+        .section-newsletter { padding: 4rem 0 6rem 0; }
+        .newsletter-card { padding: 3rem 1.5rem; }
+        
         .nl-form { flex-direction: column; }
         .nl-input { width: 100%; }
         .btn { width: 100%; }
         
+        .main-footer { padding-top: 4rem; }
         .footer-grid {
             grid-template-columns: 1fr;
             gap: 3rem;
@@ -1960,7 +2068,7 @@
 
         <div class="footer-bottom">
             <span>&copy; 2025 Квiткарня Co. Всі права захищено.</span>
-            <span style="display:flex; align-items:center; gap:0.5rem;">
+            <span style="display:flex; align-items:center; gap:0.5rem; justify-content: center;">
                 Зроблено з <span style="color:var(--c-raspberry);">♥</span> Дар'єю.
             </span>
         </div>
@@ -1969,10 +2077,103 @@
 </footer>
 
     <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        if(window.innerWidth <= 968) {
-             document.querySelector('.mobile-menu-btn').style.display = 'block';
+        // --- 3D Tilt Logic for Button ---
+        const btnWrapper = document.getElementById('portal-btn');
+        const btnContainer = btnWrapper.querySelector('.btn-3d-container');
+        
+        btnWrapper.addEventListener('mousemove', (e) => {
+            if(window.innerWidth < 768) return; // Disable tilt on mobile
+            
+            const rect = btnWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate rotation (center is 0)
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -15; // Max 15deg rotation
+            const rotateY = ((x - centerX) / centerX) * 15;
+
+            btnContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        btnWrapper.addEventListener('mouseleave', () => {
+            // Reset rotation
+            btnContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
+
+        // --- Transition Logic ---
+        document.getElementById('link-presentation').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.href;
+            
+            // 1. Play Curtain Animation
+            const curtain = document.getElementById('page-transition');
+            curtain.style.transform = 'translateY(0%)';
+            
+            // 2. Wait for animation, then change page
+            setTimeout(() => {
+                window.location.href = target;
+            }, 800); // 800ms matches CSS transition time
+        });
+
+        // --- Simple Particle System for Portal ---
+        const pContainer = document.getElementById('particles-container');
+        // Reduce particles on mobile for performance
+        const particleInterval = window.innerWidth < 768 ? 400 : 200;
+        
+        setInterval(() => {
+            const p = document.createElement('div');
+            p.classList.add('portal-particle');
+            const size = Math.random() * 6 + 2;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            
+            pContainer.appendChild(p);
+            
+            // Cleanup
+            setTimeout(() => {
+                p.remove();
+            }, 3000);
+        }, particleInterval);
+        
+        // --- Mobile Menu Logic ---
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose'); // NEW
+
+        function closeMenu() {
+            menuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
         }
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if(mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // NEW: Listener for close button
+        if(mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMenu);
+        }
+        
+        // Close menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-menu-overlay .btn');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
     </script>
 </body>
 </html>
