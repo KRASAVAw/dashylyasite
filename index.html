@@ -2011,10 +2011,10 @@
                 <h2 class="nl-headline">Приєднуйся до клубу Квiткарня.</h2>
                 <p class="nl-sub">Підпишись, щоб першою дізнаватися про новинки, отримувати ексклюзивні пропозиції та науково обґрунтовані поради щодо догляду за шкірою.</p>
                 
-                <form class="nl-form" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="Ваша пошта" class="nl-input" required>
-                    <button type="submit" class="btn btn-primary">Підписатися</button>
-                </form>
+                <form class="nl-form" id="newsletter-form">
+    <input type="email" id="newsletter-input" placeholder="Ваша пошта" class="nl-input" required>
+    <button type="submit" id="newsletter-btn" class="btn btn-primary">Підписатися</button>
+</form>
                 
                 <p class="nl-disclaimer">Без спаму, тільки сяйво. Відписка в будь-який момент.</p>
             </div>
@@ -2077,6 +2077,7 @@
 </footer>
 
     <script>
+
         // --- 3D Tilt Logic for Button ---
         const btnWrapper = document.getElementById('portal-btn');
         const btnContainer = btnWrapper.querySelector('.btn-3d-container');
@@ -2174,6 +2175,48 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+		
+		// Находим элементы формы
+    const form = document.getElementById('newsletter-form');
+    const input = document.getElementById('newsletter-input');
+    const btn = document.getElementById('newsletter-btn');
+
+    // Слушаем событие отправки
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Останавливаем перезагрузку страницы
+
+        const originalText = btn.innerText;
+        const email = input.value;
+
+        // 1. Визуально показываем процесс загрузки
+        btn.innerText = "Обробка...";
+        btn.style.opacity = "0.7";
+
+        // 2. Имитируем задержку отправки на сервер (1.5 секунды)
+        setTimeout(() => {
+            // 3. Успешный результат
+            btn.innerText = "Ви підписані! ✨";
+            btn.style.backgroundColor = "#28a745"; // Зеленый цвет успеха
+            btn.style.borderColor = "#28a745"; 
+            btn.style.color = "#fff";
+            btn.style.opacity = "1";
+            btn.style.boxShadow = "none";
+            
+            // Очищаем поле ввода
+            input.value = "";
+
+            // 4. Через 3 секунды возвращаем кнопку в исходное состояние
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = ""; // Сброс к стилям CSS
+                btn.style.borderColor = "";
+                btn.style.color = "";
+            }, 4000);
+
+        }, 1500);
+    });
+		
+		
     </script>
 </body>
 </html>
